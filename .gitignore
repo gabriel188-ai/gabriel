@@ -1,32 +1,69 @@
-# Prerequisites
-*.d
+#include <iostream>
+#include <string>
 
-# Compiled Object files
-*.slo
-*.lo
-*.o
-*.obj
+int main() {
+    std::cout << "Você é um explorador em busca de um tesouro lendário em uma ilha misteriosa." << std::endl;
+    std::cout << "Você se depara com três caminhos diferentes." << std::endl;
+    
+    std::cout << "Escolha um caminho:" << std::endl;
+    std::cout << "1. Entrar na selva" << std::endl;
+    std::cout << "2. Cruzar a ponte" << std::endl;
+    std::cout << "3. Entrar na caverna" << std::endl;
 
-# Precompiled Headers
-*.gch
-*.pch
+    std::string escolha;
+    std::getline(std::cin, escolha);
 
-# Compiled Dynamic libraries
-*.so
-*.dylib
-*.dll
+    if (escolha == "1") {
+        std::cout << "Você escolheu entrar na selva." << std::endl;
+        // Add logic for this scenario
+        std::cout << "Na selva, você encontra um animal selvagem. O que você faz?" << std::endl;
+        std::cout << "1. Tentar domar o animal" << std::endl;
+        std::cout << "2. Fugir" << std::endl;
+        
+        std::string escolhaSelva;
+        std::getline(std::cin, escolhaSelva);
+        if (escolhaSelva == "1") {
+            std::cout << "Você tentou domar o animal e teve sucesso! Você encontra um caminho seguro." << std::endl;
+            // Continue the story
+        } else if (escolhaSelva == "2") {
+            std::cout << "Você fugiu e encontrou outro caminho." << std::endl;
+            // Continue the story
+        }
+    } else if (escolha == "2") {
+        std::cout << "Você escolheu cruzar a ponte." << std::endl;
+        // Add logic for this scenario
+        std::cout << "A ponte é instável e você precisa decidir se cruza devagar ou rápido." << std::endl;
+        std::cout << "1. Cruzar devagar" << std::endl;
+        std::cout << "2. Cruzar rápido" << std::endl;
+        
+        std::string escolhaPonte;
+        std::getline(std::cin, escolhaPonte);
+        if (escolhaPonte == "1") {
+            std::cout << "Você cruzou devagar e com segurança chegou ao outro lado." << std::endl;
+            // Continue the story
+        } else if (escolhaPonte == "2") {
+            std::cout << "A ponte quebrou e você caiu no rio. Você nadou até a margem." << std::endl;
+            // Continue the story
+        }
+    } else if (escolha == "3") {
+        std::cout << "Você escolheu entrar na caverna." << std::endl;
+        // Add logic for this scenario
+        std::cout << "A caverna está escura e você precisa decidir se acende uma tocha ou segue no escuro." << std::endl;
+        std::cout << "1. Acender a tocha" << std::endl;
+        std::cout << "2. Seguir no escuro" << std::endl;
+        
+        std::string escolhaCaverna;
+        std::getline(std::cin, escolhaCaverna);
+        if (escolhaCaverna == "1") {
+            std::cout << "Você acendeu a tocha e encontrou o tesouro!" << std::endl;
+            // Continue the story or finish
+        } else if (escolhaCaverna == "2") {
+            std::cout << "Você seguiu no escuro e se perdeu. Volte para a entrada da caverna." << std::endl;
+            // Continue the story
+        }
+    } else {
+        std::cout << "Escolha inválida." << std::endl;
+    }
 
-# Fortran module files
-*.mod
-*.smod
-
-# Compiled Static libraries
-*.lai
-*.la
-*.a
-*.lib
-
-# Executables
-*.exe
-*.out
-*.app
+    return 0;
+}
